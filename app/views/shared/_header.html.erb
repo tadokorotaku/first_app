@@ -1,0 +1,53 @@
+<header>
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content mask">
+	  <li><%= link_to "アカウント情報", edit_user_registration_path %></li>
+	  <li><%= link_to "受講コース", myprojects_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+	</ul>
+
+	<ul id="dropdown2" class="dropdown-content mask">
+	  <li><%= link_to "アカウント情報", edit_user_registration_path %></li>
+	  <li><%= link_to "受講コース", myprojects_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+	</ul>
+
+	<nav class="white z-depth-0">
+		<div class="container">
+	    <div class="nav-wrapper black-text">
+	      <a href="/" class="brand-logo black-text">オンライン動画学習サイト</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+	      <ul class="right hide-on-med-and-down">
+	        <li class="black-text"><%= link_to "プロジェクト", project_index_path, class: "black-text" %></li>
+	        <% if(!user_signed_in?) %>
+		        <li><%= link_to "新規登録", new_user_registration_path, class: "black-text" %></li>
+		        <li><%= link_to "ログイン", new_user_session_path, class: "black-text" %></li>
+		      <% else%>
+		        <!-- Dropdown Trigger -->
+			      <li><a class="dropdown-button valign-wrapper black-text" href="#!" data-activates="dropdown1">
+			      	<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
+			      	<%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+			      </li>
+		      <% end %>
+
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="#">コース</a></li>
+	        <% if(!user_signed_in?) %>
+		        <li><%= link_to "新規登録", new_user_registration_path, class: "black-text" %></li>
+		        <li><%= link_to "ログイン", new_user_session_path, class: "black-text" %></li>
+		      <% else%>
+		        <!-- Dropdown Trigger -->
+			      <li><a class="dropdown-button valign-wrapper black-text" href="#!" data-activates="dropdown2">
+				      <%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
+				      <%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+				    </li>
+		      <% end %>
+	      </ul>
+	    </div>
+    </div>
+  </nav>
+</header>

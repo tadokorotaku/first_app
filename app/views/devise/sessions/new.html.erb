@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col m6 offset-m3 center">
+
+    <h5>ログイン</h5>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render partial: "shared/devisemes" %>
+
+      <div class="input-field">
+        <%= f.email_field :email, :id => "email", :class => "validate", :placeholder => "メールアドレス" %>
+      </div>
+
+      <div class="input-field">
+        <%= f.password_field :password, :id => "email", :class => "validate", :placeholder => "パスワード", autocomplete: "off" %>
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit" name="action">ログイン</button>
+      <%= link_to "パスワードをお忘れの方", new_user_password_path, :class => "btn waves-effect waves-light" %>
+    <% end %>
+　　　
+　　<p class="center-align">または連携アカウントでログイン</p>
+     <%= link_to "Googleでログイン", user_omniauth_authorize_path(:google_oauth2), class: "btn red darken-1 z-depth-0" %>
+    <%= link_to "Facebookでログイン", user_omniauth_authorize_path(:facebook), class: "btn blue darken-4 z-depth-0" %>
+    <br/><br/>
+    ※既に会員の方は<a href="">こちら</a>
+  </div>
+</div>

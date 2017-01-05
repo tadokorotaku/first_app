@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>オンライン動画学習サイト</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+
+		<%= render partial: "shared/header" %>
+		<%= render partial: "shared/message" %>
+
+		<main>
+			
+				<%= yield %>
+			
+		</main>
+
+		<%= render partial: "shared/footer" %>
+
+	</body>
+
+	<script>
+		$(".button-collapse").sideNav();
+		$(".dropdown-button").dropdown();
+	</script>
+
+</html>
