@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'ruby', '2.2.6'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', groups: %w(test development), require: false
@@ -37,4 +36,3 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
