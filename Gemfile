@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '2.2.6'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', groups: %w(test development), require: false
 gem 'pg', groups: %w(production), require: false
