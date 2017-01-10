@@ -21,7 +21,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin.git'
 gem 'active_skin'
 gem 'paperclip', '~> 4.2.1'
 gem 'redcarpet', '~> 3.2', '>= 3.2.3'
